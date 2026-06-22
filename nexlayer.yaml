@@ -1,0 +1,14 @@
+application:
+  name: node-red
+  pods:
+  - name: app
+    image: nodered/node-red:latest
+    path: /
+    servicePorts:
+    - 1880
+    vars:
+      NODE_RED_ENABLE_PROJECTS: "true"
+    volumes:
+    - name: node-red-data
+      mountPath: /data
+      size: 5Gi
